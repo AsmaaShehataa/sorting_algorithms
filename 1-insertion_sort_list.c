@@ -8,7 +8,7 @@
 void node_sw(listint_t **left, listint_t **right)
 {
 (*left)->next = (*right)->next;
-(*right)->next = (*left)->prev;
+(*right)->prev = (*left)->prev;
 if ((*right)->next)
 (*right)->next->prev = (*left);
 if ((*left)->prev)
