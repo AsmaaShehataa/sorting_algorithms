@@ -23,23 +23,23 @@ if ((*left)->prev)
 */
 void insertion_sort_list(listint_t **list)
 {
-listint_t *temp = NULL, *curr = NULL, *prev = NULL;
+listint_t *temp_ll = NULL, *currentAs = NULL, *prev = NULL;
 if (list && *list && (*list)->next)
 {
-temp = (*list)->next;
-while (temp)
+temp_ll = (*list)->next;
+while (temp_ll)
 {
-curr = temp;
-prev = temp->prev;
-while (prev && curr->n < prev->n)
+currentAs = temp_ll;
+prev = temp_ll->prev;
+while (prev && currentAs->n < prev->n)
 {
-node_sw(&prev, &curr);
-if (prev == *list) /* if curr now list head */
-*list = curr;
+node_sw(&prev, &currentAs);
+if (prev == *list) /* if currentAs now list head */
+*list = currentAs;
 print_list(*list);
-prev = curr->prev;
+prev = currentAs->prev;
 }
-temp = temp->next;
+temp_ll = temp_ll->next;
 }
 }
 }
