@@ -33,7 +33,7 @@ curr = temp;
 prev = temp->prev;
 while (prev && curr->n < prev->n)
 {
-swap_nodes(&prev, &curr);
+node_sw(&prev, &curr);
 if (prev == *list) /* if curr now list head */
 *list = curr;
 print_list(*list);
