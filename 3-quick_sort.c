@@ -60,7 +60,7 @@ my_quickksurt(array, size, pvt + 1, high);
 */
 void quick_sort(int *array, size_t size)
 {
-if (array && size > 1)
+if (array == NULL|| size == 0)
 return;
 my_quickksurt(array, size, 0, size - 1);
 }
