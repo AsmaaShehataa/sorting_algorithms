@@ -8,7 +8,7 @@
  * @bm: 2nd value positon
 */
 
-/**void func_swap(int *array, size_t size, int *am, int *bm)
+void func_swap(int *array, size_t size, int *am, int *bm)
 {
 if (*am != *bm)
 {
@@ -18,20 +18,7 @@ if (*am != *bm)
 print_array((const int *)array, size);
 }
 }
-*/
 
-void func_swap(int *arr, size_t size, int *a, int *b)
-{
-	int tmpo;
-
-	if (*a != *b)
-	{
-		tmpo = *a;
-		*a = *b;
-		*b = tmpo;
-		print_array(arr, size); /* print updated array */
-	}
-}
 /**
  * lowmuto_scheme - partify the array
  * @array: array to be sorted
@@ -51,6 +38,19 @@ func_swap(array, size, &array[i], &array[high]);
 return (i);
 }
 /**
+ * quick_sort - function that sorts an array of integers in ascending
+ * @array: array to be sorted
+ * @size: size of the array
+*/
+
+void quick_sort(int *array, size_t size)
+{
+if (array == NULL || size == 0)
+return;
+my_quickksurt(array, size, 0, size - 1);
+}
+
+/**
  * my_quickksurt - quicksort via lowmuto part scheme
  * @array: array to be sorted
  * @size: size of the array
@@ -65,16 +65,4 @@ size_t pvt = lowmuto_scheme(array, size, low, high);
 my_quickksurt(array, size, low, pvt - 1);
 my_quickksurt(array, size, pvt + 1, high);
 }
-}
-
-/**
- * quick_sort - function that sorts an array of integers in ascending
- * @array: array to be sorted
- * @size: size of the array
-*/
-void quick_sort(int *array, size_t size)
-{
-if (array == NULL || size == 0)
-return;
-my_quickksurt(array, size, 0, size - 1);
 }
