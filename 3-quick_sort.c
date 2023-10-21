@@ -4,18 +4,18 @@
  * func_swap - function swaps bet two ints
  * @array: array to be sorted
  * @size: size of the array
- * @el1: 1st value position
- * @el2: 2nd value positon
+ * @am: 1st value position
+ * @bm: 2nd value positon
 */
 
-void func_swap(int *array, size_t size, int *el1, int *el2)
+void func_swap(int *array, size_t size, int *am, int *bm)
 {
-if (*el1 != *el2)
+if (*am != *bm)
 {
-*el1 = *el1 + *el2;
-*el2 = *el1 - *el2;
-*el1 = *el1 - *el2;
-print_array((const int *) array, size);
+*am = *am + *bm;
+*bm = *am - *bm;
+*am = *am - *bm;
+print_array((const int *)array, size);
 }
 }
 /**
@@ -60,7 +60,7 @@ my_quickksurt(array, size, pvt + 1, high);
 */
 void quick_sort(int *array, size_t size)
 {
-if (array == NULL|| size == 0)
+if (array == NULL || size == 0)
 return;
-my_quickksurt(array, size, 0, size - 1);
+my_quickksurt(array, size, size - 1, 0);
 }
