@@ -33,7 +33,7 @@ void selection_sort(int *array, size_t size)
 		}
 		if (mini_vle != num_count)
 		{
-		
+
 			tmp_sw = array[mini_vle];
 			array[mini_vle] = array[num_count];
 			array[num_count] = tmp_sw;
