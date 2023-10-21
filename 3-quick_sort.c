@@ -8,7 +8,7 @@
  * @bm: 2nd value positon
 */
 
-void func_swap(int *array, size_t size, int *am, int *bm)
+/**void func_swap(int *array, size_t size, int *am, int *bm)
 {
 if (*am != *bm)
 {
@@ -17,6 +17,20 @@ if (*am != *bm)
 *am = *am - *bm;
 print_array((const int *)array, size);
 }
+}
+*/
+
+void func_swap(int *arr, size_t size, int *a, int *b)
+{
+	int tmpo;
+
+	if (*a != *b)
+	{
+		tmpo = *a;
+		*a = *b;
+		*b = tmpo;
+		print_array(arr, size); /* print updated array */
+	}
 }
 /**
  * lowmuto_scheme - partify the array
@@ -62,5 +76,5 @@ void quick_sort(int *array, size_t size)
 {
 if (array == NULL || size == 0)
 return;
-my_quickksurt(array, size, size - 1, 0);
+my_quickksurt(array, size, 0, size - 1);
 }
