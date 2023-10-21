@@ -37,12 +37,6 @@ func_swap(array, size, &array[j], &array[i++]);
 func_swap(array, size, &array[i], &array[high]);
 return (i);
 }
-void quick_sort(int *array, size_t size)
-{
-if (array == NULL || size == 0)
-return;
-my_quickksurt(array, size, 0, size - 1);
-}
 
 /**
  * my_quickksurt - quicksort via lowmuto part scheme
