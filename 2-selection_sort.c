@@ -1,44 +1,42 @@
 #include "sort.h"
 
 /**
- * selection_sort - Selection sort algorithm
+ * selection_sort - function that sorts an array of integers
  * @array: The array to be sorted
  * @size: Size of the array
- * Return: Void
  */
 void selection_sort(int *array, size_t size)
 {
 
-	size_t counter1, counter2, min_index, temp_swap;
+	size_t num_count, num_count2, mini_vle, tmp_sw;
 
 
-	/*Check inputs*/
-	if (array == NULL || size == 0)
+
+	if (!array || !size)
 	{
 		return;
 	}
 
-	/* Loop through array*/
-	for (counter1 = 0; counter1 < size - 1; counter1++)
-	{
-		/* Set current number to min_index */
-		min_index = counter1;
 
-		/*Find the smallest number and set to min_index  */
-		for (counter2 = counter1 + 1; counter2 < size; counter2++)
+	for (num_count = 0; num_count < size - 1; num_count++)
+	{
+
+		mini_vle = num_count;
+
+
+		for (num_count2 = num_count + 1; num_count2 < size; num_count2++)
 		{
-			if (array[counter2] < array[min_index])
+			if (array[num_count2] < array[mini_vle])
 			{
-				min_index = counter2;
+				mini_vle = num_count2;
 			}
 		}
-		/*If current index is not the smallest element*/
-		if (min_index != counter1)
+		if (mini_vle != num_count)
 		{
-			/*Swap element until smallest is before larger numbers*/
-			temp_swap = array[min_index];
-			array[min_index] = array[counter1];
-			array[counter1] = temp_swap;
+		
+			tmp_sw = array[mini_vle];
+			array[mini_vle] = array[num_count];
+			array[num_count] = tmp_sw;
 			print_array(array, size);
 		}
 	}
