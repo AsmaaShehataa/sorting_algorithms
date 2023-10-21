@@ -17,7 +17,7 @@ return;
 }
 for (i = 0; i < size - 1; i++)
 {
-for (j = i + 1, k = i; j > 0 && array[k] >= array[--j]; k++)
+for (j = size - 1, k = i + 1; j > i; j--)
 {
 if (array[j] < array[k])
 {
